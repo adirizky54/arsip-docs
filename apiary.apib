@@ -1,80 +1,240 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://arsip-be-dev.qti.co.id/api
 
-# arsip
+# Arsip Kejaksaan
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Arsip Kejaksaan API Collections
 
-## Questions Collection [/questions]
+## Auth Collection [/auth]
 
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Login [POST /auth/login/]
 
 + Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "username": "indonesia8810@gmail.com",
+                "password": "Testing1"
             }
+
++ Response 200 (application/json)
+
+        {
+            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImJiNGYxYTEyLWUxZjctMTFlOS05NDZjLTAyNDJhYzExMDAxNiIsImVtYWlsIjoiaW5kb25lc2lhODgxMEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xNyAxMzozMDo1NCJ9.oheWGfMa7Y3QwKFleYB4tHhZEPCkfMujsu6YbPOpRs8",
+            "created": "2019-11-17 13:30:54",
+            "expired": "2019-11-17 17:30:54",
+            "user": {
+                "id": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                "email": "indonesia8810@gmail.com",
+                "nama_lengkap": "indonesia 8810",
+                "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                "nama_unit_kerja": "UNIT KEARSIPAN",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "id_jabatan": "37a68864-ef2a-11e9-a400-0242ac110018"
+            },
+            "user_level": 2,
+            "permissions": [
+                {
+                    "id": "c78a4d0c-ff7f-11e9-9563-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-04 19:38:52",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "id_user": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                    "kode_modul": "SU-UK-UL",
+                    "nama_modul": "permanen-non-permanen",
+                    "action": "parent",
+                    "access": true
+                }
+            ]
+        }
+        
+### Verification OTP [POST /auth/otp/]
+
++ Request (application/json)
+    + Body
+
+            {
+                "email": "indonesia8810@gmail.com",
+                "otp": "T65125"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImJiNGYxYTEyLWUxZjctMTFlOS05NDZjLTAyNDJhYzExMDAxNiIsImVtYWlsIjoiaW5kb25lc2lhODgxMEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xNyAxMzozMDo1NCJ9.oheWGfMa7Y3QwKFleYB4tHhZEPCkfMujsu6YbPOpRs8",
+            "created": "2019-11-17 13:30:54",
+            "expired": "2019-11-17 17:30:54",
+            "user": {
+                "id": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                "email": "indonesia8810@gmail.com",
+                "nama_lengkap": "indonesia 8810",
+                "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                "nama_unit_kerja": "UNIT KEARSIPAN",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "id_jabatan": "37a68864-ef2a-11e9-a400-0242ac110018"
+            },
+            "user_level": 2,
+            "permissions": [
+                {
+                    "id": "c78a4d0c-ff7f-11e9-9563-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-04 19:38:52",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "id_user": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                    "kode_modul": "SU-UK-UL",
+                    "nama_modul": "permanen-non-permanen",
+                    "action": "parent",
+                    "access": true
+                }
+            ]
+        }
+        
+### Forgot Password [POST /auth/forgotpassword/]
+
++ Request (application/json)
+    + Body
+
+            {
+                "email": "indonesia8810@gmail.com"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "message": "link untuk reset password telah dikirim ke email"
+        }
+
+## User Collection [/users]
+
+### List User [GET /users/{?page}{?pageSize}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 30,
+            "filtered": 30,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "dd4d0aa8-e1f7-11e9-8eb4-0242ac110016",
+                    "email": "indonesia8811@gmail.com",
+                    "nama_depan": "indonesia",
+                    "nama_belakang": "8811",
+                    "nama_lengkap": "indonesia 8811",
+                    "nip": 12345,
+                    "no_tlp": null,
+                    "alamat": null,
+                    "is_active": true,
+                    "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                    "nama_unit_kerja": "UNIT KEARSIPAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "id_jabatan": "034c5fd2-c7b0-11e9-91f3-0242ac11000c",
+                    "nama_jabatan": "Staff",
+                    "created_date": "2019-09-28 13:57:09"
+                }
+            ]
+        }
+        
+### Get Detail User [GET /users/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: 1 (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "dd4d0aa8-e1f7-11e9-8eb4-0242ac110016",
+            "email": "indonesia8811@gmail.com",
+            "nama_depan": "indonesia",
+            "nama_belakang": "8811",
+            "nama_lengkap": "indonesia 8811",
+            "nip": 12345,
+            "no_tlp": null,
+            "alamat": null,
+            "is_active": true,
+            "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+            "nama_unit_kerja": "UNIT KEARSIPAN",
+            "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+            "nama_organisasi": "Kejaksaan",
+            "id_jabatan": "034c5fd2-c7b0-11e9-91f3-0242ac11000c",
+            "nama_jabatan": "Staff",
+            "created_date": "2019-09-28 13:57:09",
+            "user_level": 1
+        }
+        
+### Create User [POST /users/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "nama_depan": "Staff",
+                "nama_belakang": "Badan Pendidikan",
+                "email": "staff_pendidikan@qti.co.id",
+                "nip": "198503302003121090",
+                "password": "123",
+                "password_confirm": "123",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "id_unit_kerja":"dc79ae86-fae7-11e9-882a-0242ac110012",
+                "id_jabatan":"2d67290a-fae8-11e9-9f23-0242ac110012",
+                "level":1
+            }
+
++ Response 200 (application/json)
+
+        {
+            "message": "User staff_pendidikan@qti.co.id telah berhasil dibuat",
+            "data": {
+                "id": "acece5a6-0a7b-11ea-9b66-0242ac110013",
+                "email": "staff_pendidikan@qti.co.id",
+                "nama_depan": "Staff",
+                "nama_belakang": "Badan Pendidikan",
+                "nama_lengkap": "Staff Badan Pendidikan",
+                "nip": "198503302003121090",
+                "no_tlp": null,
+                "alamat": null,
+                "is_active": true,
+                "id_unit_kerja": "dc79ae86-fae7-11e9-882a-0242ac110012",
+                "nama_unit_kerja": "BADAN PENDIDIKAN & PELATIHAN",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_organisasi": "Kejaksaan",
+                "id_jabatan": "2d67290a-fae8-11e9-9f23-0242ac110012",
+                "nama_jabatan": "STAFF SUBBAGIAN TATA USAHA (PUSDIKLAT MANAJEMEN KEPEMIMPINAN PADA BADIKLAT)",
+                "created_date": "2019-11-19 03:21:28"
+            }
+        }
