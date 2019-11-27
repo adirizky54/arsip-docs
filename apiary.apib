@@ -113,6 +113,802 @@ Arsip Kejaksaan API Collections
             "message": "link untuk reset password telah dikirim ke email"
         }
 
+## Arsip Collection [/arsip/]
+
+### List Arsip Aktif [GET /arsip/{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 12,
+            "filtered": 12,
+            "page": 1,
+            "pageCount": 2,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "2b7aa310-0932-11ea-8e6e-0242ac110013",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-15 19:30:43",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "tanggal_arsip": "16/11/2019",
+                    "nomor_arsip": "arsipTest123",
+                    "judul_arsip": "judul arsip",
+                    "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "b144491a-a21a-11e9-a16c-0242ac110007",
+                    "nama_tingkat_akses_publik": "Tertutup",
+                    "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                    "nama_kategori_arsip": "Terjaga",
+                    "deskripsi": "ini deskripsi",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "23fa0ed2-e00c-11e9-b47b-0242ac110016",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 0,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "a218b812-073d-11ea-8274-0242ac110013",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-14 18:29:58",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "tanggal_arsip": "15/11/2019",
+                    "nomor_arsip": "123456",
+                    "judul_arsip": "test-123456",
+                    "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                    "nama_unit_kerja": "UNIT KEARSIPAN",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e376da4a-f6f7-11e9-b077-0242ac110012",
+                    "kode_klasifikasi": "KF.00.00.TFK",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                    "nama_tingkat_akses_publik": "Terbuka",
+                    "id_kategori_arsip": "d086b622-a21a-11e9-bf3e-0242ac110007",
+                    "nama_kategori_arsip": "Umum",
+                    "deskripsi": "test",
+                    "keterangan": "testing",
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "23fa0ed2-e00c-11e9-b47b-0242ac110016",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 0,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "9366ee7a-0065-11ea-adda-0242ac110013",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-06 14:14:46",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "tanggal_arsip": "26/09/2019",
+                    "nomor_arsip": "TEST/2",
+                    "judul_arsip": "Test 2",
+                    "id_unit_kerja": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                    "nama_sifat_arsip": "Sangat Rahasia",
+                    "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                    "nama_tingkat_akses_publik": "Terbuka",
+                    "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                    "nama_kategori_arsip": "Terjaga",
+                    "deskripsi": "Ini Deskripsi",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 0,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "e9a3d52e-0065-11ea-8006-0242ac110013",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-06 14:14:46",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "tanggal_arsip": "26/09/2019",
+                    "nomor_arsip": "TEST/1",
+                    "judul_arsip": "Test 1",
+                    "id_unit_kerja": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                    "nama_tingkat_akses_publik": "Terbuka",
+                    "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                    "nama_kategori_arsip": "Terjaga",
+                    "deskripsi": "Ini Deskripsi",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 0,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "95c15568-0064-11ea-b56f-0242ac110013",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-06 11:49:00",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-06 11:49:00",
+                    "tanggal_arsip": "25/09/2019",
+                    "nomor_arsip": "TEST/7",
+                    "judul_arsip": "TEST/7",
+                    "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                    "nama_tingkat_akses_publik": "Terbuka",
+                    "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                    "nama_kategori_arsip": "Terjaga",
+                    "deskripsi": "ini deskripsi TES/7",
+                    "keterangan": "ini keterangan TES/7",
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 1,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "49482aec-0064-11ea-8f9d-0242ac110013",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-06 11:49:00",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "tanggal_arsip": "01/01/1992",
+                    "nomor_arsip": "testing 6-11-2019 2:07pm",
+                    "judul_arsip": "ini judul testing 6-11-2019 2:07pm",
+                    "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e376da4a-f6f7-11e9-b077-0242ac110012",
+                    "kode_klasifikasi": "KF.00.00.TFK",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                    "nama_sifat_arsip": "Sangat Rahasia",
+                    "id_tingkat_akses_publik": "b144491a-a21a-11e9-a16c-0242ac110007",
+                    "nama_tingkat_akses_publik": "Tertutup",
+                    "id_kategori_arsip": "d086b622-a21a-11e9-bf3e-0242ac110007",
+                    "nama_kategori_arsip": "Umum",
+                    "deskripsi": "ini deskripsi testing 6-11-2019 2:07pm",
+                    "keterangan": "ini keterangan testing 6-11-2019 2:07pm",
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 0,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "ba2158c2-fae9-11e9-a575-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "tanggal_arsip": "30/10/2019",
+                    "nomor_arsip": "TK.TK.PENGAWASAN",
+                    "judul_arsip": "ARSIP PUNYA PENGAWASAN",
+                    "id_unit_kerja": "f1aee95c-c3d8-11e9-87c7-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PENGAWASAN",
+                    "kode_unit": null,
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                    "nama_tingkat_akses_publik": "Terbuka",
+                    "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                    "nama_kategori_arsip": "Terjaga",
+                    "deskripsi": "Testing arsip Pengawasan",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": true,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 0,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "id_lokasi": null,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null
+                },
+                {
+                    "id": "528a118c-e00c-11e9-88d1-0242ac110016",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-09-25 18:09:08",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-09-25 18:09:08",
+                    "tanggal_arsip": "26/09/2019",
+                    "nomor_arsip": "TEST/3",
+                    "judul_arsip": "Test 3",
+                    "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_boks": "KF.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "e10bdabe-e00b-11e9-9836-0242ac110016",
+                    "nama_tingkat_akses_publik": "deleted_Tertutup",
+                    "id_kategori_arsip": "f2898582-e00b-11e9-911f-0242ac110016",
+                    "nama_kategori_arsip": "deleted_Terjaga",
+                    "deskripsi": "Ini Deskripsi",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "23fa0ed2-e00c-11e9-b47b-0242ac110016",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": true,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 1,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null,
+                    "id_lokasi": null
+                },
+                {
+                    "id": "2d7b5758-e00d-11e9-ae7d-0242ac110016",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-09-25 18:09:08",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-09-25 18:09:08",
+                    "tanggal_arsip": "26/09/2019",
+                    "nomor_arsip": "TEST/8",
+                    "judul_arsip": "Test 8",
+                    "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_boks": "KF.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+                    "nama_sifat_arsip": "Rahasia",
+                    "id_tingkat_akses_publik": "e10bdabe-e00b-11e9-9836-0242ac110016",
+                    "nama_tingkat_akses_publik": "deleted_Tertutup",
+                    "id_kategori_arsip": "f2898582-e00b-11e9-911f-0242ac110016",
+                    "nama_kategori_arsip": "deleted_Terjaga",
+                    "deskripsi": "Ini Deskripsi",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "23fa0ed2-e00c-11e9-b47b-0242ac110016",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": true,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 1,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null,
+                    "id_lokasi": null
+                },
+                {
+                    "id": "245ac690-e00d-11e9-82c9-0242ac110016",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-09-25 18:09:08",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-09-25 18:09:08",
+                    "tanggal_arsip": "26/09/2019",
+                    "nomor_arsip": "TEST/6",
+                    "judul_arsip": "Test 6",
+                    "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "id_fungsi": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "id_subfungsi": "c118431e-e00a-11e9-b863-0242ac110016",
+                    "id_kegiatan": "d4e7c924-e00a-11e9-8fa8-0242ac110016",
+                    "id_transaksi": "e7f96db6-e00a-11e9-ab96-0242ac110016",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "kode_klasifikasi_boks": "KF.00.00",
+                    "kode_klasifikasi_retensi": "KF0000",
+                    "id_tingkat_perkembangan": "None",
+                    "nama_tingkat_perkembangan": null,
+                    "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                    "nama_sifat_arsip": "Sangat Rahasia",
+                    "id_tingkat_akses_publik": "e10bdabe-e00b-11e9-9836-0242ac110016",
+                    "nama_tingkat_akses_publik": "deleted_Tertutup",
+                    "id_kategori_arsip": "f2898582-e00b-11e9-911f-0242ac110016",
+                    "nama_kategori_arsip": "deleted_Terjaga",
+                    "deskripsi": "Ini Deskripsi",
+                    "keterangan": null,
+                    "id_media_arsip": "None",
+                    "nama_media_arsip": null,
+                    "id_bahasa": "23fa0ed2-e00c-11e9-b47b-0242ac110016",
+                    "nama_bahasa": "Indonesia",
+                    "is_vital": false,
+                    "jumlah": null,
+                    "kondisi": null,
+                    "rev_no": 1,
+                    "status_arsip": 0,
+                    "arsip_aktif": true,
+                    "arsip_dipinjam": false,
+                    "arsip_dimusnahkan": false,
+                    "arsip_inaktif_detail": false,
+                    "ruang": null,
+                    "lemari": null,
+                    "baris": null,
+                    "boks": null,
+                    "folder": null,
+                    "id_lokasi": null
+                }
+            ]
+        }
+
+### Detail Arsip [GET /arsip/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `a73be14c-10fa-11ea-854e-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "a73be14c-10fa-11ea-854e-0242ac110007",
+            "created_by_id": "None",
+            "created_by_email": null,
+            "created_by_nama": null,
+            "created_date": "2019-11-27 09:00:35",
+            "updated_by_id": null,
+            "updated_by_email": null,
+            "updated_date": null,
+            "tanggal_arsip": "27/11/2019",
+            "nomor_arsip": "027/ARSIP/2019",
+            "judul_arsip": "Arsip 027",
+            "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+            "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+            "kode_unit": null,
+            "id_fungsi": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+            "id_subfungsi": "80536738-d5fd-11e9-af1f-0242ac11000e",
+            "id_kegiatan": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+            "id_transaksi": "e427534a-d850-11e9-ad30-0242ac11000e",
+            "kode_klasifikasi": "BK.13.00.01",
+            "kode_klasifikasi_retensi": "BK1300",
+            "id_tingkat_perkembangan": "None",
+            "nama_tingkat_perkembangan": null,
+            "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+            "nama_sifat_arsip": "Sangat Rahasia",
+            "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+            "nama_tingkat_akses_publik": "Terbuka",
+            "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+            "nama_kategori_arsip": "Terjaga",
+            "deskripsi": "Ini Deskripsi",
+            "keterangan": null,
+            "id_media_arsip": "None",
+            "nama_media_arsip": null,
+            "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+            "nama_bahasa": "Indonesia",
+            "is_vital": true,
+            "jumlah": null,
+            "kondisi": null,
+            "rev_no": 0,
+            "status_arsip": 0,
+            "arsip_aktif": true,
+            "arsip_dipinjam": false,
+            "arsip_dimusnahkan": false,
+            "arsip_inaktif_detail": false,
+            "id_lokasi": null,
+            "ruang": null,
+            "lemari": null,
+            "baris": null,
+            "boks": null,
+            "folder": null,
+            "files": []
+        }
+
+### Create Arsip Aktif [POST /arsip/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "tanggal_arsip": "27/11/2019",
+                "nomor_arsip": "027/ARSIP/2019",
+                "judul_arsip": "Arsip 027",
+                "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                "id_fungsi": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                "id_subfungsi": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                "id_kegiatan": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                "id_transaksi": "e427534a-d850-11e9-ad30-0242ac11000e",
+                "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                "is_vital": true,
+                "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                "deskripsi": "Ini Deskripsi"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "Arsip 027/ARSIP/2019 telah berhasil diberkaskan",
+            "data": {
+                "id": "a73be14c-10fa-11ea-854e-0242ac110007",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "tanggal_arsip": "27/11/2019",
+                "nomor_arsip": "027/ARSIP/2019",
+                "judul_arsip": "Arsip 027",
+                "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                "kode_unit": null,
+                "id_fungsi": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                "id_subfungsi": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                "id_kegiatan": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                "id_transaksi": "e427534a-d850-11e9-ad30-0242ac11000e",
+                "kode_klasifikasi": "BK.13.00.01",
+                "kode_klasifikasi_retensi": "BK1300",
+                "id_tingkat_perkembangan": "None",
+                "nama_tingkat_perkembangan": null,
+                "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                "nama_sifat_arsip": "Sangat Rahasia",
+                "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                "nama_tingkat_akses_publik": "Terbuka",
+                "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                "nama_kategori_arsip": "Terjaga",
+                "deskripsi": "Ini Deskripsi",
+                "keterangan": null,
+                "id_media_arsip": "None",
+                "nama_media_arsip": null,
+                "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                "nama_bahasa": "Indonesia",
+                "is_vital": true,
+                "jumlah": null,
+                "kondisi": null,
+                "rev_no": 0,
+                "status_arsip": 0,
+                "arsip_aktif": true,
+                "arsip_dipinjam": false,
+                "arsip_dimusnahkan": false,
+                "arsip_inaktif_detail": false,
+                "id_lokasi": null,
+                "ruang": null,
+                "lemari": null,
+                "baris": null,
+                "boks": null,
+                "folder": null
+            }
+        }
+
+### Update Arsip Aktif [PUT /arsip/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "tanggal_arsip": "27/11/2019",
+                "nomor_arsip": "027/ARSIP/2019",
+                "judul_arsip": "Arsip 027",
+                "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                "id_fungsi": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                "id_subfungsi": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                "id_kegiatan": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                "id_transaksi": "e427534a-d850-11e9-ad30-0242ac11000e",
+                "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                "is_vital": true,
+                "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                "deskripsi": "Ini Deskripsi"
+            }
+
++ Parameters
+
+    + id: `a73be14c-10fa-11ea-854e-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Arsip 027/ARSIP/2019 telah berhasil diupdate",
+            "data": {
+                "id": "a73be14c-10fa-11ea-854e-0242ac110007",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": "2019-11-27 09:00:35",
+                "tanggal_arsip": "27/11/2019",
+                "nomor_arsip": "027/ARSIP/2019",
+                "judul_arsip": "Arsip 027",
+                "id_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                "kode_unit": null,
+                "id_fungsi": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                "id_subfungsi": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                "id_kegiatan": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                "id_transaksi": "e427534a-d850-11e9-ad30-0242ac11000e",
+                "kode_klasifikasi": "BK.13.00.01",
+                "kode_klasifikasi_retensi": "BK1300",
+                "id_tingkat_perkembangan": "None",
+                "nama_tingkat_perkembangan": null,
+                "id_sifat_arsip": "6d08be5e-b1ea-11e9-a7b0-0242ac11000b",
+                "nama_sifat_arsip": "Sangat Rahasia",
+                "id_tingkat_akses_publik": "b4e3b38a-a21a-11e9-95ce-0242ac110007",
+                "nama_tingkat_akses_publik": "Terbuka",
+                "id_kategori_arsip": "d4680828-a21a-11e9-b5f8-0242ac110007",
+                "nama_kategori_arsip": "Terjaga",
+                "deskripsi": "Ini Deskripsi",
+                "keterangan": null,
+                "id_media_arsip": "None",
+                "nama_media_arsip": null,
+                "id_bahasa": "f2536e94-a22e-11e9-8994-0242ac110007",
+                "nama_bahasa": "Indonesia",
+                "is_vital": true,
+                "jumlah": null,
+                "kondisi": null,
+                "rev_no": 1,
+                "status_arsip": 0,
+                "arsip_aktif": true,
+                "arsip_dipinjam": false,
+                "arsip_dimusnahkan": false,
+                "arsip_inaktif_detail": false,
+                "id_lokasi": null,
+                "ruang": null,
+                "lemari": null,
+                "baris": null,
+                "boks": null,
+                "folder": null
+            }
+        }
+
+### Delete Arsip [DELETE /arsip/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `a73be14c-10fa-11ea-854e-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Arsip Arsip 027 telah dihapus."
+        }
+
 ## User Collection [/users]
 
 ### List User [GET /users/{?page}{?pageSize}{?search}]
@@ -309,7 +1105,7 @@ Arsip Kejaksaan API Collections
 
         {
             "message": "User staff_pendidikan@qti.co.id telah dihapus."
-        }        
+        }
 
 ## Organisasi Collection [/organisasi]
 
@@ -2777,7 +3573,7 @@ Arsip Kejaksaan API Collections
             }
         }
 
-### Download Backup [GET /backup/{id}]
+### Download Backup [GET /backup/{id}/]
     
 + Request (application/x-www-form-urlencoded)
 
@@ -2790,3 +3586,42 @@ Arsip Kejaksaan API Collections
     + id: `aa8f3c90-10e8-11ea-a50e-0242ac110007` (string)
 
 + Response 200 (application/zip)
+
+### Delete Backup [DELETE /backup/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `aa8f3c90-10e8-11ea-a50e-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "File Backup telah dihapus"
+        }
+
+### Restore File [POST /backup/restore/]
+    
++ Request (multipart/form-data)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                backup_file: file
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "restore success"
+        }
