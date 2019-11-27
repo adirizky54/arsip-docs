@@ -113,7 +113,7 @@ Arsip Kejaksaan API Collections
             "message": "link untuk reset password telah dikirim ke email"
         }
 
-## User Group Collection [/users]
+## User Collection [/users]
 
 ### List User [GET /users/{?page}{?pageSize}]
 
@@ -159,7 +159,7 @@ Arsip Kejaksaan API Collections
             ]
         }
         
-### Get Detail User [GET /users/{id}/]
+### Detail User [GET /users/{id}/]
     
 + Request
 
@@ -170,7 +170,7 @@ Arsip Kejaksaan API Collections
             
 + Parameters
 
-    + id: 1 (string)
+    + id: `dd4d0aa8-e1f7-11e9-8eb4-0242ac110016` (string)
 
 + Response 200 (application/json)
 
@@ -217,7 +217,7 @@ Arsip Kejaksaan API Collections
                 "level":1
             }
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
         {
             "message": "User staff_pendidikan@qti.co.id telah berhasil dibuat",
@@ -240,6 +240,7 @@ Arsip Kejaksaan API Collections
                 "created_date": "2019-11-19 03:21:28"
             }
         }
+
 ### Update User [PUT /users/{id}/]
     
 + Request (application/json)
@@ -264,7 +265,7 @@ Arsip Kejaksaan API Collections
             }
 + Parameters
 
-    + id: 1 (string)
+    + id: `acece5a6-0a7b-11ea-9b66-0242ac110013` (string)
 
 + Response 200 (application/json)
 
@@ -289,6 +290,7 @@ Arsip Kejaksaan API Collections
                 "created_date": "2019-11-19 03:21:28"
             }
         }
+        
 ### Delete User [DELETE /users/{id}/]
     
 + Request
@@ -300,14 +302,16 @@ Arsip Kejaksaan API Collections
             
 + Parameters
 
-    + id: 1 (string)
+    + id: `acece5a6-0a7b-11ea-9b66-0242ac110013` (string)
 
 + Response 200 (application/json)
 
         {
             "message": "User staff_pendidikan@qti.co.id telah dihapus."
-        }
-        
+        }        
+
+## Organisasi Collection [/organisasi]
+
 ### List Organisasi [GET /organisasi/{?page}{?pageSize}]
 
 + Parameters
@@ -345,6 +349,126 @@ Arsip Kejaksaan API Collections
                 }
             ]
         }
+
+### Detail Organisasi [GET /organisasi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `86ae3026-10d1-11ea-a3a6-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "86ae3026-10d1-11ea-a3a6-0242ac110013",
+            "created_by_id": "None",
+            "created_by_email": null,
+            "created_by_nama": null,
+            "created_date": "2019-11-25 12:11:59",
+            "updated_by_id": null,
+            "updated_by_email": null,
+            "updated_date": null,
+            "nama_organisasi": "Kejaksaan 1",
+            "is_active": true
+        }
+
+### Create Organisasi [POST /organisasi/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "nama_organisasi": "Kejaksaan 1",
+                "is_active": true
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "Organisasi Kejaksaan 1 telah berhasil dibuat",
+            "data": {
+                "id": "86ae3026-10d1-11ea-a3a6-0242ac110013",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-25 12:11:59",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "nama_organisasi": "Kejaksaan 1",
+                "is_active": true
+            }
+        }
+
+### Update Organisasi [PUT /organisasi/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "nama_organisasi": "Kejaksaan Copy",
+                "is_active": true
+            }
+            
++ Parameters
+
+    + id: `86ae3026-10d1-11ea-a3a6-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Organisasi Kejaksaan 1 telah berhasil diubah",
+            "data": {
+                "id": "86ae3026-10d1-11ea-a3a6-0242ac110013",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-25 12:11:59",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": "2019-11-25 12:11:59",
+                "nama_organisasi": "Kejaksaan Copy",
+                "is_active": true
+            }
+        }
+
+### Delete Organisasi [DELETE /organisasi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `86ae3026-10d1-11ea-a3a6-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Organisasi Kejaksaan Copy telah dihapus."
+        }
+
+## Unit Kerja Collection [/unit-kerja]
+
 ### List Unit Kerja [GET /unit-kerja/{?page}{?pageSize}]
 
 + Parameters
@@ -445,6 +569,175 @@ Arsip Kejaksaan API Collections
                 }
             ]
         }
+
+### Detail Unit Kerja [GET /unit-kerja/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `84683766-10d3-11ea-98a1-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "84683766-10d3-11ea-98a1-0242ac110013",
+            "created_by_id": "None",
+            "created_by_email": null,
+            "created_by_nama": null,
+            "created_date": "2019-11-25 12:11:59",
+            "updated_by_id": null,
+            "updated_by_email": null,
+            "updated_date": null,
+            "nama_unit_kerja": "Unit Kerja copy",
+            "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+            "nama_organisasi": "Kejaksaan",
+            "is_active": true,
+            "kode_unit": null
+        }
+
+### Create Unit Kerja [POST /unit-kerja/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_unit_kerja": "Unit Kerja copy",
+                "is_active":true
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "Unit Kerja Unit Kerja copy telah berhasil dibuat",
+            "data": {
+                "id": "84683766-10d3-11ea-98a1-0242ac110013",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-25 12:11:59",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "nama_unit_kerja": "Unit Kerja copy",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_organisasi": "Kejaksaan",
+                "is_active": true,
+                "kode_unit": null
+            }
+        }
+
+### Update Unit Kerja [PUT /unit-kerja/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_unit_kerja": "Unit Kerja copy ya",
+                "is_active":true
+            }
+            
++ Parameters
+
+    + id: `84683766-10d3-11ea-98a1-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Unit Kerja Unit Kerja copy telah berhasil diubah",
+            "data": {
+                "id": "84683766-10d3-11ea-98a1-0242ac110013",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-25 12:11:59",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": "2019-11-25 12:11:59",
+                "nama_unit_kerja": "Unit Kerja copy ya",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_organisasi": "Kejaksaan",
+                "is_active": true,
+                "kode_unit": null
+            }
+        }
+
+### Unit Kerja by Organisasi [GET /unit-kerja/{?organisasi}{?page}{?pageSize}]
+
++ Parameters
+
+    + organisasi: `2540ff08-e00b-11e9-a0a3-0242ac110016` (string)
+    + page: 1 (number, optional)
+    + pageSize: 100 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 13,
+            "filtered": 13,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 100,
+            "results": [
+                {
+                    "id": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-05 12:20:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-05 12:20:59",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                },
+                {
+                    "id": "f1aee95c-c3d8-11e9-87c7-0242ac11000e",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-20 16:24:34",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PENGAWASAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                },
+            ]
+        }
+
+## Jabatan Collection [/jabatan]
+
 ### List Jabatan [GET /jabatan/{?page}{?pageSize}]
 
 + Parameters
