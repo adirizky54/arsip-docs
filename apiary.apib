@@ -1216,7 +1216,7 @@ Arsip Kejaksaan API Collections
             "top_10_arsip": []
         }
 
-### Dashboard Analytics [GET /users/analytics]
+### Dashboard Analytics (Admin) [GET /users/analytics]
 
 + Request
 
@@ -7019,4 +7019,231 @@ Arsip Kejaksaan API Collections
 
         {
             "message": "restore success"
+        }
+
+## Tanya Jawab Collection [/tanya-jawab]
+
+### List Tanya Jawab [GET /tanya-jawab/{?root}{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + root: true (string, optional)
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "filtered": 1,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "b0554706-e995-11e9-b219-0242ac110012",
+                    "created_by_id": "64f4d31a-d2cf-11e9-b588-0242ac11000d",
+                    "created_by_email": "ritarahma1706@gmail.com",
+                    "created_by_nama": "Rita Rahma",
+                    "created_date": "2019-10-07 19:50:02",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "no_tiket": "#zhhgux",
+                    "judul": "pertanyaan 4",
+                    "id_kategori": "c21e578a-d85f-11e9-ae8b-0242ac11000e",
+                    "nama_kategori": "Sop Arsip",
+                    "tanggal": "2019-10-07 19:50:03",
+                    "deskripsi": "pertanyaan baru",
+                    "tujuan_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "tujuan_nama": "Adi Rizky",
+                    "is_replay": false,
+                    "replay_to": null,
+                    "root": true,
+                    "pengirim": "anda",
+                    "pengirim_unit_kerja": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "pengirim_nama_unit": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM",
+                    "status": "open"
+                }
+            ]
+        }
+
+## Bantuan Collection [/bantuan]
+
+### List Bantuan [GET /bantuan/{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 11,
+            "filtered": 11,
+            "page": 1,
+            "pageCount": 2,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "20bec848-f540-11e9-a3d6-0242ac11000d",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-10-22 11:34:28",
+                    "updated_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "updated_by_email": "aryamuktadir@gmail.com",
+                    "updated_date": "2019-10-22 11:34:28",
+                    "pertanyaan": "Cara Menambahkan User update"
+                },
+                {
+                    "id": "28eda5fe-b8c0-11e9-8fd2-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "SOP-Perawatan & Pemeliharaan Arsip"
+                },
+                {
+                    "id": "3f394aa2-b8bb-11e9-8330-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "SOP-Penyerahan Arsip Inaktif"
+                },
+                {
+                    "id": "789995e2-b8c3-11e9-a15f-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "SOP - Penilaian Arsip"
+                },
+                {
+                    "id": "89af8ac0-b8c0-11e9-9596-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "SOP - Duplikasi Arsip"
+                },
+                {
+                    "id": "9a9e00dc-b8c3-11e9-9155-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "SOP - Penataan Arsip Inaktif Teratur"
+                },
+                {
+                    "id": "a5409822-b8c1-11e9-9b13-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "SOP - Pengembalian Arsip"
+                },
+                {
+                    "id": "d6f40ee2-b8c0-11e9-94f5-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "Manual - Login Kedalam Aplikasi"
+                },
+                {
+                    "id": "da199f80-b8c4-11e9-afc6-0242ac11000c",
+                    "created_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "created_by_email": "aryamuktadir@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-06 19:09:48",
+                    "updated_by_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "updated_by_email": "freelancerramadhona@gmail.com",
+                    "updated_date": "2019-08-06 19:09:48",
+                    "pertanyaan": "Manual - Entry Arsip"
+                },
+                {
+                    "id": "e15dfc5a-02e8-11ea-a2c5-0242ac110008",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": "Adi Rizky",
+                    "created_date": "2019-11-09 18:47:17",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "pertanyaan": "Cara Meminjam Arsip"
+                }
+            ]
+        }
+
+### Detail Bantuan [GET /lampiran/modules/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `20bec848-f540-11e9-a3d6-0242ac11000d` (string)
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "filtered": 1,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "20bec848-f540-11e9-a3d6-0242ac11000d",
+                    "pertanyaan": "Cara Menambahkan User update",
+                    "id_lampiran": "44186846-f540-11e9-9346-0242ac11000d",
+                    "path_lampiran": "/uploaded/l35d0jodk6lxpdbwctpvfwm5.pdf",
+                    "type_lampiran": null,
+                    "is_deleted": false
+                }
+            ]
         }
