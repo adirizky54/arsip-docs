@@ -350,7 +350,7 @@ Arsip Kejaksaan API Collections
 + Parameters
 
     + page: 1 (number, optional)
-    + pageSize: 10 (number, optional)
+    + pageSize: 5 (number, optional)
     
 + Request
 
@@ -442,6 +442,111 @@ Arsip Kejaksaan API Collections
                     "nama_organisasi": "Kejaksaan",
                     "is_active": true,
                     "kode_unit": null
+                }
+            ]
+        }
+### List Jabatan [GET /jabatan/{?page}{?pageSize}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 5 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 62,
+            "filtered": 62,
+            "page": 1,
+            "pageCount": 13,
+            "pageSize": 5,
+            "results": [
+                {
+                    "id": "abf9bc4c-fade-11e9-b683-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-29 14:10:59",
+                    "nama_jabatan": "KEPALA SUBBAGIAN TATA USAHA  WAKIL JAKSA AGUNG DAN STAF AHLI",
+                    "id_unit_kerja": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "d72f2e22-fade-11e9-8899-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-29 14:10:59",
+                    "nama_jabatan": "STAFF SUBBAGIAN TATA USAHA  WAKIL JAKSA AGUNG DAN STAF AHLI",
+                    "id_unit_kerja": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "139b4592-fae0-11e9-b4f7-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-29 14:10:59",
+                    "nama_jabatan": "KEPALA SUBBAGIAN PERSURATAN DAN KEARSIPAN",
+                    "id_unit_kerja": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "25467974-fae0-11e9-ba04-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-29 14:10:59",
+                    "nama_jabatan": "STAFF SUBBAGIAN PERSURATAN DAN KEARSIPAN",
+                    "id_unit_kerja": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "503b8c74-fade-11e9-a988-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-29 14:10:59",
+                    "nama_jabatan": "KEPALA SUBBAGIAN TATA USAHA JAKSA AGUNG",
+                    "id_unit_kerja": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
                 }
             ]
         }
