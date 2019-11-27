@@ -113,7 +113,7 @@ Arsip Kejaksaan API Collections
             "message": "link untuk reset password telah dikirim ke email"
         }
 
-## User Collection [/users]
+## User Group Collection [/users]
 
 ### List User [GET /users/{?page}{?pageSize}]
 
@@ -122,10 +122,11 @@ Arsip Kejaksaan API Collections
     + page: 1 (number, optional)
     + pageSize: 10 (number, optional)
     
-+ Request (application/json)
++ Request
 
     + Headers
     
+            Accept: json/application
             Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
 
 + Response 200 (application/json)
@@ -160,10 +161,11 @@ Arsip Kejaksaan API Collections
         
 ### Get Detail User [GET /users/{id}/]
     
-+ Request (application/json)
++ Request
 
     + Headers
     
+            Accept: json/application
             Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
             
 + Parameters
@@ -237,4 +239,209 @@ Arsip Kejaksaan API Collections
                 "nama_jabatan": "STAFF SUBBAGIAN TATA USAHA (PUSDIKLAT MANAJEMEN KEPEMIMPINAN PADA BADIKLAT)",
                 "created_date": "2019-11-19 03:21:28"
             }
+        }
+### Update User [PUT /users/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "nama_depan": "Staff",
+                "nama_belakang": "Badan Pendidikan",
+                "nip": "198503302003121090",
+                "no_tlp": null,
+                "alamat": null,
+                "is_active": true,
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "id_unit_kerja": "dc79ae86-fae7-11e9-882a-0242ac110012",
+                "id_jabatan": "f37ed768-fae1-11e9-8423-0242ac110012",
+                "level": 1
+            }
++ Parameters
+
+    + id: 1 (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "User staff_pendidikan@qti.co.id telah berhasil diubah",
+            "data": {
+                "id": "acece5a6-0a7b-11ea-9b66-0242ac110013",
+                "email": "staff_pendidikan@qti.co.id",
+                "nama_depan": "Staff",
+                "nama_belakang": "Badan Pendidikan",
+                "nama_lengkap": "Staff Badan Pendidikan",
+                "nip": "198503302003121090",
+                "no_tlp": null,
+                "alamat": null,
+                "is_active": true,
+                "id_unit_kerja": "dc79ae86-fae7-11e9-882a-0242ac110012",
+                "nama_unit_kerja": "BADAN PENDIDIKAN & PELATIHAN",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_organisasi": "Kejaksaan",
+                "id_jabatan": "f37ed768-fae1-11e9-8423-0242ac110012",
+                "nama_jabatan": "STAFF BAGIAN TATA USAHA (PUSAT PENKUM)",
+                "created_date": "2019-11-19 03:21:28"
+            }
+        }
+### Delete User [DELETE /users/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: 1 (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "User staff_pendidikan@qti.co.id telah dihapus."
+        }
+        
+### List Organisasi [GET /organisasi/{?page}{?pageSize}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "filtered": 1,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 5,
+            "results": [
+                {
+                    "id": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-09-25 18:09:08",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                }
+            ]
+        }
+### List Unit Kerja [GET /unit-kerja/{?page}{?pageSize}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 12,
+            "filtered": 12,
+            "page": 1,
+            "pageCount": 3,
+            "pageSize": 5,
+            "results": [
+                {
+                    "id": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-05 12:20:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-05 12:20:59",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                },
+                {
+                    "id": "f1aee95c-c3d8-11e9-87c7-0242ac11000e",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-20 16:24:34",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PENGAWASAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                },
+                {
+                    "id": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-20 16:24:34",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                },
+                {
+                    "id": "39e75a66-c3d9-11e9-b754-0242ac11000e",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-20 16:24:34",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA INTELIJEN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                },
+                {
+                    "id": "ff34d730-c3d8-11e9-b2f3-0242ac11000e",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-08-20 16:24:34",
+                    "nama_unit_kerja": "JAKSA AGUNG",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true,
+                    "kode_unit": null
+                }
+            ]
         }
