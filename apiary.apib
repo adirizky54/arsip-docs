@@ -115,12 +115,13 @@ Arsip Kejaksaan API Collections
 
 ## User Collection [/users]
 
-### List User [GET /users/{?page}{?pageSize}]
+### List User [GET /users/{?page}{?pageSize}{?search}]
 
 + Parameters
 
     + page: 1 (number, optional)
     + pageSize: 10 (number, optional)
+    + search (string, optional)
     
 + Request
 
@@ -312,12 +313,13 @@ Arsip Kejaksaan API Collections
 
 ## Organisasi Collection [/organisasi]
 
-### List Organisasi [GET /organisasi/{?page}{?pageSize}]
+### List Organisasi [GET /organisasi/{?page}{?pageSize}{?search}]
 
 + Parameters
 
     + page: 1 (number, optional)
     + pageSize: 10 (number, optional)
+    + search (string, optional)
     
 + Request
 
@@ -469,12 +471,13 @@ Arsip Kejaksaan API Collections
 
 ## Unit Kerja Collection [/unit-kerja]
 
-### List Unit Kerja [GET /unit-kerja/{?page}{?pageSize}]
+### List Unit Kerja [GET /unit-kerja/{?page}{?pageSize}{?search}]
 
 + Parameters
 
     + page: 1 (number, optional)
     + pageSize: 5 (number, optional)
+    + search (string, optional)
     
 + Request
 
@@ -679,6 +682,25 @@ Arsip Kejaksaan API Collections
             }
         }
 
+### Delete Unit Kerja [DELETE /unit-kerja/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `84683766-10d3-11ea-98a1-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Unit Kerja Unit Kerja copy ya telah dihapus."
+        }
+
 ### Unit Kerja by Organisasi [GET /unit-kerja/{?organisasi}{?page}{?pageSize}]
 
 + Parameters
@@ -738,12 +760,13 @@ Arsip Kejaksaan API Collections
 
 ## Jabatan Collection [/jabatan]
 
-### List Jabatan [GET /jabatan/{?page}{?pageSize}]
+### List Jabatan [GET /jabatan/{?page}{?pageSize}{?search}]
 
 + Parameters
 
     + page: 1 (number, optional)
     + pageSize: 5 (number, optional)
+    + search (string, optional)
     
 + Request
 
@@ -843,3 +866,998 @@ Arsip Kejaksaan API Collections
                 }
             ]
         }
+
+### Detail Jabatan [GET /jabatan/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `abf9bc4c-fade-11e9-b683-0242ac110012` (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "abf9bc4c-fade-11e9-b683-0242ac110012",
+            "created_by_id": "None",
+            "created_by_email": null,
+            "created_by_nama": null,
+            "created_date": "2019-10-29 14:10:59",
+            "updated_by_id": null,
+            "updated_by_email": null,
+            "updated_date": "2019-10-29 14:10:59",
+            "nama_jabatan": "KEPALA SUBBAGIAN TATA USAHA  WAKIL JAKSA AGUNG DAN STAF AHLI",
+            "id_unit_kerja": "2e7c24da-c3d9-11e9-852c-0242ac11000e",
+            "nama_unit_kerja": "JAKSA AGUNG MUDA PEMBINAAN",
+            "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+            "nama_organisasi": "Kejaksaan",
+            "is_active": true
+        }
+
+### Create Jabatan [POST /jabatan/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                "nama_jabatan": "Jabatan Percobaan",
+                "is_active": true
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "Jabatan Jabatan Percobaan telah berhasil dibuat",
+            "data": {
+                "id": "01be746e-10da-11ea-bb55-0242ac110013",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-25 12:11:59",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "nama_jabatan": "Jabatan Percobaan",
+                "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                "nama_unit_kerja": "UNIT KEARSIPAN",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_organisasi": "Kejaksaan",
+                "is_active": true
+            }
+        }
+
+### Update Jabatan [PUT /jabatan/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                "nama_jabatan": "Jabatan Percobaan Ya",
+                "is_active": true
+            }
+            
++ Parameters
+
+    + id: `01be746e-10da-11ea-bb55-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Jabatan Jabatan Percobaan telah berhasil diubah",
+            "data": {
+                "id": "01be746e-10da-11ea-bb55-0242ac110013",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-25 12:11:59",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": "2019-11-25 12:11:59",
+                "nama_jabatan": "Jabatan Percobaan Ya",
+                "id_unit_kerja": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                "nama_unit_kerja": "UNIT KEARSIPAN",
+                "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                "nama_organisasi": "Kejaksaan",
+                "is_active": true
+            }
+        }
+
+### Delete Jabatan [DELETE /jabatan/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `01be746e-10da-11ea-bb55-0242ac110013` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "Jabatan Jabatan Percobaan Ya telah dihapus."
+        }
+
+### Jabatan by Unit Kerja [GET /jabatan/{?unit_kerja}{?page}{?pageSize}]
+
++ Parameters
+
+    + unit_kerja: `39e75a66-c3d9-11e9-b754-0242ac11000e` (string)
+    + page: 1 (number, optional)
+    + pageSize: 100 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 4,
+            "filtered": 4,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 100,
+            "results": [
+                {
+                    "id": "f37ed768-fae1-11e9-8423-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "nama_jabatan": "STAFF BAGIAN TATA USAHA (PUSAT PENKUM)",
+                    "id_unit_kerja": "39e75a66-c3d9-11e9-b754-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA INTELIJEN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "d681e77a-fae1-11e9-a305-0242ac110012",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-29 14:10:59",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "nama_jabatan": "STAFF BAGIAN TATA USAHA (INTELIJEN)",
+                    "id_unit_kerja": "39e75a66-c3d9-11e9-b754-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA INTELIJEN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "1e55d122-ef2a-11e9-a3a8-0242ac110018",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-15 15:57:42",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-15 15:57:42",
+                    "nama_jabatan": "KEPALA BAGIAN TATA USAHA (PUSAT PENKUM)",
+                    "id_unit_kerja": "39e75a66-c3d9-11e9-b754-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA INTELIJEN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                },
+                {
+                    "id": "29515714-ef2a-11e9-8e55-0242ac110018",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-10-15 15:57:42",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-10-15 15:57:42",
+                    "nama_jabatan": "KEPALA BAGIAN TATA USAHA (INTELIJEN)",
+                    "id_unit_kerja": "39e75a66-c3d9-11e9-b754-0242ac11000e",
+                    "nama_unit_kerja": "JAKSA AGUNG MUDA INTELIJEN",
+                    "id_organisasi": "2540ff08-e00b-11e9-a0a3-0242ac110016",
+                    "nama_organisasi": "Kejaksaan",
+                    "is_active": true
+                }
+            ]
+        }
+
+## Referensi Collection [/referensi]
+
+### List Referensi [GET /referensi/{?kunci}{?modul}{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + kunci (string)
+
+        + Values
+            + `perkembangan`
+            + `akses`
+            + `kategori`
+            + `media`
+            + `bahasa`
+            + `sifat`
+
+    + modul (string)
+
+        + Values
+            + `naskah`
+            + `arsip`
+            + `bahasa`
+
+    + page: 1 (number, optional)
+    + pageSize: 5 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 9,
+            "filtered": 9,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "24474608-a21b-11e9-9a27-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Pertinggal",
+                    "deskripsi": "Pertinggal"
+                },
+                {
+                    "id": "2eac4fe4-a21b-11e9-af90-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Kopi biasa",
+                    "deskripsi": "Kopi biasa"
+                },
+                {
+                    "id": "39927e24-a21b-11e9-9f3a-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Petikan",
+                    "deskripsi": "Petikan"
+                },
+                {
+                    "id": "1e9b214c-a21b-11e9-8930-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Asli",
+                    "deskripsi": "Asli"
+                },
+                {
+                    "id": "2875b448-a21b-11e9-b91c-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Kopi autentik",
+                    "deskripsi": "Kopi autentik"
+                },
+                {
+                    "id": "36ac4100-a21b-11e9-9d38-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Kutipan",
+                    "deskripsi": "Kutipan"
+                },
+                {
+                    "id": "331ac080-a21b-11e9-bb55-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Draf",
+                    "deskripsi": "Draf"
+                },
+                {
+                    "id": "3d2115be-a21b-11e9-976f-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Salinan",
+                    "deskripsi": "Salinan"
+                },
+                {
+                    "id": "2157819c-a21b-11e9-87ed-0242ac110007",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-07-09 13:53:45",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kunci": "perkembangan",
+                    "modul": "naskah",
+                    "value": "Tembusan",
+                    "deskripsi": "Tembusan"
+                }
+            ]
+        }
+
+### Detail Referensi [GET /referensi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `79382a9a-b1ea-11e9-a170-0242ac11000b/` (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "79382a9a-b1ea-11e9-a170-0242ac11000b",
+            "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+            "created_by_email": "adirizky54@gmail.com",
+            "created_by_nama": null,
+            "created_date": "2019-07-29 15:06:23",
+            "updated_by_id": null,
+            "updated_by_email": null,
+            "updated_date": null,
+            "kunci": "sifat",
+            "modul": "arsip",
+            "value": "Rahasia",
+            "deskripsi": "Rahasia"
+        }
+
+### Create Referensi [POST /referensi/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "kunci": "sifat",
+                "modul": "arsip",
+                "value": "Biasa aja",
+                "deskripsi": "Biasa aja"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "referensi sifat untuk modul arsip telah berhasil disimpan",
+            "data": {
+                "id": "157a6894-10df-11ea-8fce-0242ac110007",
+                "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "created_by_email": "adirizky54@gmail.com",
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "kunci": "sifat",
+                "modul": "arsip",
+                "value": "Biasa aja",
+                "deskripsi": "Biasa aja"
+            }
+        }
+
+### Update Referensi [PUT /referensi/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "kunci": "sifat",
+                "modul": "arsip",
+                "value": "Normal",
+                "deskripsi": "Normal"
+            }
+            
++ Parameters
+
+    + id: `157a6894-10df-11ea-8fce-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "referensi sifat untuk modul arsip telah berhasil diubah",
+            "data": {
+                "id": "157a6894-10df-11ea-8fce-0242ac110007",
+                "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "created_by_email": "adirizky54@gmail.com",
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "updated_by_email": "adirizky54@gmail.com",
+                "updated_date": "2019-11-27 09:00:35",
+                "kunci": "sifat",
+                "modul": "arsip",
+                "value": "Normal",
+                "deskripsi": "Normal"
+            }
+        }
+
+### Delete Referensi [DELETE /referensi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `157a6894-10df-11ea-8fce-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "referensi telah berhasil dihapus"
+        }
+
+## Riwayat Collection [/logs]
+
+### List Riwayat Login dan Logout [GET /logs/logonlog{?page}{?pageSize}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 5 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 1110,
+            "filtered": 1110,
+            "page": 1,
+            "pageCount": 111,
+            "pageSize": 5,
+            "results": [
+                {
+                    "id": "0b70e53a-10da-11ea-bd8a-0242ac110013",
+                    "user_id": "6c467bda-fd77-11e9-be92-0242ac110012",
+                    "nama_lengkap": "Reza Andji",
+                    "email_user": "rezandji@gmail.com",
+                    "ip_address": "117.54.250.113",
+                    "action": "login",
+                    "log_time": "2019-11-27 12:52:06"
+                },
+                {
+                    "id": "fdf356b8-10d6-11ea-9281-0242ac110013",
+                    "user_id": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                    "nama_lengkap": "indonesia 8810",
+                    "email_user": "indonesia8810@gmail.com",
+                    "ip_address": "117.54.250.113",
+                    "action": "login",
+                    "log_time": "2019-11-27 12:30:15"
+                },
+                {
+                    "id": "d5b0e25a-10d6-11ea-943d-0242ac110013",
+                    "user_id": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                    "nama_lengkap": "indonesia 8810",
+                    "email_user": "indonesia8810@gmail.com",
+                    "ip_address": "117.54.250.113",
+                    "action": "login",
+                    "log_time": "2019-11-27 12:29:08"
+                },
+                {
+                    "id": "c0c1d51a-10d6-11ea-b649-0242ac110013",
+                    "user_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "nama_lengkap": "Rama dhona",
+                    "email_user": "freelancerramadhona@gmail.com",
+                    "ip_address": "117.54.250.113",
+                    "action": "login",
+                    "log_time": "2019-11-27 12:28:33"
+                },
+                {
+                    "id": "c1bac2c8-10d4-11ea-9b2f-0242ac110013",
+                    "user_id": "bb4f1a12-e1f7-11e9-946c-0242ac110016",
+                    "nama_lengkap": "indonesia 8810",
+                    "email_user": "indonesia8810@gmail.com",
+                    "ip_address": "117.54.250.113",
+                    "action": "login",
+                    "log_time": "2019-11-27 12:14:15"
+                }
+            ]
+        }
+
+### List Riwayat Pemberkasan [GET /logs/pemberkasan/{?page}{?pageSize}{?search}{?unit_kerja}{?start_date}{?end_date}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 5 (number, optional)
+    + search (string, optional)
+    + unit_kerja: `557fe824-b758-11e9-9ab6-0242ac11000c` (string, optional)
+    + start_date: '2019-11-22+13:50:08' (string, optional)
+    + end_date: '2019-11-27+13:50:08' (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 10,
+            "filtered": 10,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 5,
+            "results": [
+                {
+                    "id": "e70d704c-10ce-11ea-9165-0242ac110013",
+                    "nama_petugas": "Rita Rahma",
+                    "no_arsip": "KEJAK123",
+                    "tanggal_pemberkasan": "2019-11-27 11:32:20",
+                    "unit_pencipta_id": "c89ab7f8-c3d8-11e9-9ffc-0242ac11000e",
+                    "unit_pencipta_nama": "JAKSA AGUNG MUDA PERDATA & TATA USAHA NEGARA"
+                },
+                {
+                    "id": "26ae90c8-0835-11ea-a41f-0242ac110013",
+                    "nama_petugas": "indonesia 8811",
+                    "no_arsip": "qtk4680q",
+                    "tanggal_pemberkasan": "2019-11-15 19:30:43",
+                    "unit_pencipta_id": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "unit_pencipta_nama": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS"
+                },
+                {
+                    "id": "180f17be-0836-11ea-9c9b-0242ac110013",
+                    "nama_petugas": "indonesia 8811",
+                    "no_arsip": "AAUTK123",
+                    "tanggal_pemberkasan": "2019-11-15 19:30:43",
+                    "unit_pencipta_id": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                    "unit_pencipta_nama": "UNIT KEARSIPAN"
+                },
+                {
+                    "id": "c9449288-0114-11ea-b118-0242ac110013",
+                    "nama_petugas": "indonesia 8811",
+                    "no_arsip": "TES 11",
+                    "tanggal_pemberkasan": "2019-11-06 18:32:00",
+                    "unit_pencipta_id": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "unit_pencipta_nama": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS"
+                },
+                {
+                    "id": "6b07b5de-0072-11ea-9b62-0242ac110013",
+                    "nama_petugas": "indonesia 8804",
+                    "no_arsip": "TES TK.4680",
+                    "tanggal_pemberkasan": "2019-11-06 14:14:46",
+                    "unit_pencipta_id": "557fe824-b758-11e9-9ab6-0242ac11000c",
+                    "unit_pencipta_nama": "JAKSA AGUNG MUDA TINDAK PIDANA KHUSUS"
+                }
+            ]
+        }
+
+### List Riwayat Pemusnahan [GET /arsip/history-musnah/{?page}{?pageSize}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 3,
+            "filtered": 3,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "4fe8b99e-0c12-11ea-a278-0242ac110007",
+                    "kode_klasifikasi": "BK.13.00.02",
+                    "tanggal_arsip": "21/11/2019",
+                    "nomor_arsip": "contoh123",
+                    "deskripsi": "testing arsip",
+                    "tanggal_musnah": "2019-11-21 13:44:42"
+                },
+                {
+                    "id": "ea18957a-0c12-11ea-a957-0242ac110007",
+                    "kode_klasifikasi": "BK.13.00.02",
+                    "tanggal_arsip": "21/11/2019",
+                    "nomor_arsip": "012",
+                    "deskripsi": "data",
+                    "tanggal_musnah": "2019-11-21 13:42:05"
+                },
+                {
+                    "id": "19444bf0-0b73-11ea-bcdb-0242ac110014",
+                    "kode_klasifikasi": "KF.00.00.00",
+                    "tanggal_arsip": "13/11/2019",
+                    "nomor_arsip": "ArsipUnitK124",
+                    "deskripsi": "jgjhgjkhjk",
+                    "tanggal_musnah": "2019-11-21 10:13:09"
+                }
+            ]
+        }
+
+### List Aktivitas User [GET /logs/auditraillog/{?page}{?pageSize}{?search}{?unit_kerja}{?start_date}{?end_date}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 5 (number, optional)
+    + search (string, optional)
+    + unit_kerja: `557fe824-b758-11e9-9ab6-0242ac11000c` (string, optional)
+    + start_date: '2019-11-22+13:50:08' (string, optional)
+    + end_date: '2019-11-27+13:50:08' (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 874,
+            "filtered": 874,
+            "page": 1,
+            "pageCount": 88,
+            "pageSize": 5,
+            "results": [
+                {
+                    "id": "cd58c182-10da-11ea-810f-0242ac110007",
+                    "konten_tipe": "users",
+                    "konten_id": "01b2bdf4-f4df-11e9-a99c-0242ac11000d",
+                    "action": "update",
+                    "isi": "Edit user rezandji@gmail.com",
+                    "created_date": "2019-11-27 09:00:35",
+                    "user_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "nama_lengkap": "Rama dhona",
+                    "email_user": "freelancerramadhona@gmail.com",
+                    "unit_id": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                    "unit_nama": "UNIT KEARSIPAN"
+                },
+                {
+                    "id": "4083fb52-10dc-11ea-8a36-0242ac110007",
+                    "konten_tipe": "users",
+                    "konten_id": "01b2bdf4-f4df-11e9-a99c-0242ac11000d",
+                    "action": "update",
+                    "isi": "Mengubah password untuk user rezandji@gmail.com",
+                    "created_date": "2019-11-27 09:00:35",
+                    "user_id": "6161e0e4-97dd-11e9-ae0c-0242ac110008",
+                    "nama_lengkap": "Rama dhona",
+                    "email_user": "freelancerramadhona@gmail.com",
+                    "unit_id": "ecc0d8a6-e33e-11e9-a1b9-0242ac110016",
+                    "unit_nama": "UNIT KEARSIPAN"
+                },
+                {
+                    "id": "15810fa6-10df-11ea-98c5-0242ac110007",
+                    "konten_tipe": "referensi",
+                    "konten_id": "157a6894-10df-11ea-8fce-0242ac110007",
+                    "action": "create",
+                    "isi": "Membuat referensi Biasa aja",
+                    "created_date": "2019-11-27 09:00:35",
+                    "user_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "nama_lengkap": "Adi Rizky",
+                    "email_user": "adirizky54@gmail.com",
+                    "unit_id": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "unit_nama": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM"
+                },
+                {
+                    "id": "6f5a7c9c-10df-11ea-8568-0242ac110007",
+                    "konten_tipe": "referensi",
+                    "konten_id": "157a6894-10df-11ea-8fce-0242ac110007",
+                    "action": "update",
+                    "isi": "Edit referensi Normal",
+                    "created_date": "2019-11-27 09:00:35",
+                    "user_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "nama_lengkap": "Adi Rizky",
+                    "email_user": "adirizky54@gmail.com",
+                    "unit_id": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "unit_nama": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM"
+                },
+                {
+                    "id": "ac4cb7fa-10df-11ea-906c-0242ac110007",
+                    "konten_tipe": "referensi",
+                    "konten_id": "157a6894-10df-11ea-8fce-0242ac110007",
+                    "action": "delete",
+                    "isi": "Hapus referensi Normal",
+                    "created_date": "2019-11-27 09:00:35",
+                    "user_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "nama_lengkap": "Adi Rizky",
+                    "email_user": "adirizky54@gmail.com",
+                    "unit_id": "62ac6728-b757-11e9-a8dd-0242ac11000c",
+                    "unit_nama": "JAKSA AGUNG MUDA TINDAK PIDANA UMUM"
+                },
+            ]
+        }
+
+## Klasifikasi Collection [/arsip/klasifikasi]
+
+### List Klasifikasi [GET /arsip/klasifikasi/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        [
+            {
+                "value": {
+                    "id": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                    "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                    "created_by_email": "arsip.testing@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-13 14:21:36",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "BK",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Bina Kesejahteraan"
+                },
+                "children": [
+                    {
+                        "value": {
+                            "id": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                            "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                            "created_by_email": "arsip.testing@gmail.com",
+                            "created_by_nama": null,
+                            "created_date": "2019-09-13 14:21:36",
+                            "updated_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                            "updated_by_email": "arsip.testing@gmail.com",
+                            "updated_date": "2019-09-13 14:21:36",
+                            "kode": "13",
+                            "parent_id": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                            "parent_nama": "Bina Kesejahteraan",
+                            "keterangan_level": "sub fungsi",
+                            "nama": "Kesejahteraan"
+                        },
+                        "children": [
+                            {
+                                "value": {
+                                    "id": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                                    "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                                    "created_by_email": "arsip.testing@gmail.com",
+                                    "created_by_nama": null,
+                                    "created_date": "2019-09-13 14:21:36",
+                                    "updated_by_id": null,
+                                    "updated_by_email": null,
+                                    "updated_date": null,
+                                    "kode": "00",
+                                    "parent_id": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                                    "parent_nama": "Kesejahteraan",
+                                    "keterangan_level": "kegiatan",
+                                    "nama": "Kesehatan"
+                                },
+                                "children": [
+                                    {
+                                        "value": {
+                                            "id": "e427534a-d850-11e9-ad30-0242ac11000e",
+                                            "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                                            "created_by_email": "arsip.testing@gmail.com",
+                                            "created_by_nama": null,
+                                            "created_date": "2019-09-16 12:18:58",
+                                            "updated_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                                            "updated_by_email": "arsip.testing@gmail.com",
+                                            "updated_date": "2019-09-16 12:18:58",
+                                            "kode": "01",
+                                            "parent_id": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                                            "parent_nama": "Kesehatan",
+                                            "keterangan_level": "transaksi",
+                                            "nama": "Surat"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "value": {
+                                            "id": "33de1490-d851-11e9-981c-0242ac11000e",
+                                            "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                                            "created_by_email": "arsip.testing@gmail.com",
+                                            "created_by_nama": null,
+                                            "created_date": "2019-09-16 12:18:58",
+                                            "updated_by_id": null,
+                                            "updated_by_email": null,
+                                            "updated_date": null,
+                                            "kode": "02",
+                                            "parent_id": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                                            "parent_nama": "Kesehatan",
+                                            "keterangan_level": "transaksi",
+                                            "nama": "Dokumen"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": {
+                    "id": "d0b2126e-c3e9-11e9-8bf1-0242ac11000e",
+                    "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                    "created_by_email": "ramadhona@qti.co.id",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "OT",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Organisasi & Tata Laksana"
+                },
+                "children": [
+                    {
+                        "value": {
+                            "id": "f8254270-c3e9-11e9-a112-0242ac11000e",
+                            "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                            "created_by_email": "ramadhona@qti.co.id",
+                            "created_by_nama": null,
+                            "created_date": "2019-08-20 16:24:34",
+                            "updated_by_id": null,
+                            "updated_by_email": null,
+                            "updated_date": null,
+                            "kode": "00",
+                            "parent_id": "d0b2126e-c3e9-11e9-8bf1-0242ac11000e",
+                            "parent_nama": "Organisasi & Tata Laksana",
+                            "keterangan_level": "sub fungsi",
+                            "nama": "Organisasi"
+                        },
+                        "children": [
+                            {
+                                "value": {
+                                    "id": "07a271d8-c3ea-11e9-ac3c-0242ac11000e",
+                                    "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                                    "created_by_email": "ramadhona@qti.co.id",
+                                    "created_by_nama": null,
+                                    "created_date": "2019-08-20 16:24:34",
+                                    "updated_by_id": null,
+                                    "updated_by_email": null,
+                                    "updated_date": null,
+                                    "kode": "00",
+                                    "parent_id": "f8254270-c3e9-11e9-a112-0242ac11000e",
+                                    "parent_nama": "Organisasi",
+                                    "keterangan_level": "kegiatan",
+                                    "nama": "Analisis Organisasi"
+                                },
+                                "children": [
+                                    {
+                                        "value": {
+                                            "id": "1b38a076-c3ea-11e9-9a19-0242ac11000e",
+                                            "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                                            "created_by_email": "ramadhona@qti.co.id",
+                                            "created_by_nama": null,
+                                            "created_date": "2019-08-20 16:24:34",
+                                            "updated_by_id": null,
+                                            "updated_by_email": null,
+                                            "updated_date": null,
+                                            "kode": "01",
+                                            "parent_id": "07a271d8-c3ea-11e9-ac3c-0242ac11000e",
+                                            "parent_nama": "Analisis Organisasi",
+                                            "keterangan_level": "transaksi",
+                                            "nama": "Transaksi"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
