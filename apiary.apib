@@ -1471,8 +1471,8 @@ Arsip Kejaksaan API Collections
     + pageSize: 5 (number, optional)
     + search (string, optional)
     + unit_kerja: `557fe824-b758-11e9-9ab6-0242ac11000c` (string, optional)
-    + start_date: '2019-11-22+13:50:08' (string, optional)
-    + end_date: '2019-11-27+13:50:08' (string, optional)
+    + start_date: `2019-11-22+13:50:08` (string, optional)
+    + end_date: `2019-11-27+13:50:08` (string, optional)
     
 + Request
 
@@ -1591,8 +1591,8 @@ Arsip Kejaksaan API Collections
     + pageSize: 5 (number, optional)
     + search (string, optional)
     + unit_kerja: `557fe824-b758-11e9-9ab6-0242ac11000c` (string, optional)
-    + start_date: '2019-11-22+13:50:08' (string, optional)
-    + end_date: '2019-11-27+13:50:08' (string, optional)
+    + start_date: `2019-11-22+13:50:08` (string, optional)
+    + end_date: `2019-11-27+13:50:08` (string, optional)
     
 + Request
 
@@ -1680,8 +1680,12 @@ Arsip Kejaksaan API Collections
 
 ## Klasifikasi Collection [/arsip/klasifikasi]
 
-### List Klasifikasi [GET /arsip/klasifikasi/]
-    
+### List Klasifikasi [GET /arsip/klasifikasi/{?search}]
+
++ Parameters
+
+    + search (string, optional)
+
 + Request
 
     + Headers
@@ -1861,3 +1865,928 @@ Arsip Kejaksaan API Collections
                 ]
             }
         ]
+
+### List Klasifikasi by Level [GET /arsip/klasifikasi-list/{?level}{?page}{?pageSize}]
+
++ Parameters
+
+    + level (string)
+
+        + Values
+            + `fungsi`
+            + `sub fungsi`
+            + `kegiatan`
+
+    + page: 1 (number, optional)
+    + pageSize: 100 (number, optional)
+
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 7,
+            "filtered": 7,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 100,
+            "results": [
+                {
+                    "id": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                    "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                    "created_by_email": "arsip.testing@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-13 14:21:36",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "BK",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Bina Kesejahteraan"
+                },
+                {
+                    "id": "14e2ba0a-ba78-11e9-b7ba-0242ac11000c",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-09 11:54:04",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "HK",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Hukum"
+                },
+                {
+                    "id": "0c3f18b4-ba77-11e9-80a7-0242ac11000c",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-09 11:54:04",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "HM",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Hubungan Masyarakat"
+                },
+                {
+                    "id": "b42e376e-e00a-11e9-8264-0242ac110016",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-25 18:09:08",
+                    "updated_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+                    "updated_by_email": "aryamuktadir@gmail.com",
+                    "updated_date": "2019-09-25 18:09:08",
+                    "kode": "KF",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Kode Fungsi"
+                },
+                {
+                    "id": "d0b2126e-c3e9-11e9-8bf1-0242ac11000e",
+                    "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                    "created_by_email": "ramadhona@qti.co.id",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "OT",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Organisasi & Tata Laksana"
+                },
+                {
+                    "id": "f2333bc2-e012-11e9-a83a-0242ac110015",
+                    "created_by_id": "ddb6cfbe-debe-11e9-aa2e-0242ac110015",
+                    "created_by_email": "indonesia8800@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-25 19:17:36",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "PK",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Pidana Khusus"
+                },
+                {
+                    "id": "a1444b52-0bcc-11ea-9620-0242ac110014",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-11-20 20:27:07",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "kode": "PU",
+                    "parent_id": null,
+                    "parent_nama": null,
+                    "keterangan_level": "fungsi",
+                    "nama": "Pidana Umum"
+                }
+            ]
+        }
+
+
+### Detail Klasifikasi [GET /arsip/klasifikasi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `b42e376e-e00a-11e9-8264-0242ac110016` (string)
+
++ Response 200 (application/json)
+
+        {
+            "id": "b42e376e-e00a-11e9-8264-0242ac110016",
+            "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+            "created_by_email": "adirizky54@gmail.com",
+            "created_by_nama": null,
+            "created_date": "2019-09-25 18:09:08",
+            "updated_by_id": "787b8eee-b1d6-11e9-96f8-0242ac11000b",
+            "updated_by_email": "aryamuktadir@gmail.com",
+            "updated_date": "2019-09-25 18:09:08",
+            "kode": "KF",
+            "parent_id": null,
+            "parent_nama": null,
+            "keterangan_level": "fungsi",
+            "nama": "Kode Fungsi"
+        }
+
+### Create Klasifikasi [POST /arsip/klasifikasi/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "kode": "HA",
+                "nama": "Hukum Alam",
+                "keterangan_level": "fungsi",
+                "parent_id": null
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "klasifikasi Hukum Alam telah berhasil disimpan",
+            "data": {
+                "id": "5e1c239a-10e5-11ea-8cd8-0242ac110007",
+                "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "created_by_email": "adirizky54@gmail.com",
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "kode": "HA",
+                "parent_id": null,
+                "parent_nama": null,
+                "keterangan_level": "fungsi",
+                "nama": "Hukum Alam"
+            }
+        }
+
+### Update Klasifikasi [PUT /arsip/klasifikasi/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "kode": "HA",
+                "nama": "Hukum Alam",
+                "keterangan_level": "fungsi",
+                "parent_id": null
+            }
+            
++ Parameters
+
+    + id: `5e1c239a-10e5-11ea-8cd8-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "klasifikasi Hukum Alam telah berhasil diubah",
+            "data": {
+                "id": "5e1c239a-10e5-11ea-8cd8-0242ac110007",
+                "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "created_by_email": "adirizky54@gmail.com",
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "updated_by_email": "adirizky54@gmail.com",
+                "updated_date": "2019-11-27 09:00:35",
+                "kode": "HA",
+                "parent_id": null,
+                "parent_nama": null,
+                "keterangan_level": "fungsi",
+                "nama": "Hukum Alam"
+            }
+        }
+
+### Delete Klasifikasi [DELETE /arsip/klasifikasi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `5e1c239a-10e5-11ea-8cd8-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "klasifikasi telah berhasil dihapus"
+        }
+
+### List Klasifikasi Retensi [GET /arsip/klasifikasi-retensi/{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 9,
+            "filtered": 9,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "b9ea10a6-c962-11e9-9a8f-0242ac11000d",
+                    "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                    "created_by_email": "arsip.testing@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-28 13:57:51",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-08-28 13:57:51",
+                    "id_fungsi": "83f8711e-c962-11e9-a273-0242ac11000d",
+                    "id_subfungsi": "9342b852-c962-11e9-8ff2-0242ac11000d",
+                    "id_kegiatan": "9d99f4de-c962-11e9-9ff6-0242ac11000d",
+                    "kode": "990100",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 1,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": false,
+                    "dinilai_kembali": true,
+                    "keterangan": null
+                },
+                {
+                    "id": "c6f0b4c6-ce5f-11e9-a3fc-0242ac11000d",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-03 18:47:14",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-09-03 18:47:14",
+                    "id_fungsi": "83f8711e-c962-11e9-a273-0242ac11000d",
+                    "id_subfungsi": "9342b852-c962-11e9-8ff2-0242ac11000d",
+                    "id_kegiatan": "031adff6-ce5e-11e9-bcc0-0242ac11000d",
+                    "kode": "990102",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 2,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": false,
+                    "dinilai_kembali": true,
+                    "keterangan": null
+                },
+                {
+                    "id": "76827258-d5fe-11e9-87a8-0242ac11000e",
+                    "created_by_id": "ee675cdc-c87b-11e9-b00a-0242ac11000d",
+                    "created_by_email": "arsip.testing@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-13 14:21:36",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "id_fungsi": "ac09d268-d5fc-11e9-bd80-0242ac11000e",
+                    "id_subfungsi": "80536738-d5fd-11e9-af1f-0242ac11000e",
+                    "id_kegiatan": "65c04376-d5fe-11e9-a65e-0242ac11000e",
+                    "kode": "BK1300",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 1,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": true,
+                    "dinilai_kembali": false,
+                    "keterangan": null
+                },
+                {
+                    "id": "ed855440-c3e5-11e9-95f2-0242ac11000e",
+                    "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                    "created_by_email": "ramadhona@qti.co.id",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-08-20 16:24:34",
+                    "id_fungsi": "14e2ba0a-ba78-11e9-b7ba-0242ac11000c",
+                    "id_subfungsi": "51fb9f6e-bce9-11e9-b52b-0242ac11000c",
+                    "id_kegiatan": "69170448-bce9-11e9-a44c-0242ac11000c",
+                    "kode": "HK0100",
+                    "retensi_aktif_value": 2,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 2,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": true,
+                    "dinilai_kembali": false,
+                    "keterangan": null
+                },
+                {
+                    "id": "c4716b1a-cdfc-11e9-91fd-0242ac11000d",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-02 13:28:11",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-09-02 13:28:11",
+                    "id_fungsi": "14e2ba0a-ba78-11e9-b7ba-0242ac11000c",
+                    "id_subfungsi": "51fb9f6e-bce9-11e9-b52b-0242ac11000c",
+                    "id_kegiatan": "aa839d74-cdfc-11e9-b57b-0242ac11000d",
+                    "kode": "HK0101",
+                    "retensi_aktif_value": 2,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 2,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": true,
+                    "dinilai_kembali": false,
+                    "keterangan": null
+                },
+                {
+                    "id": "76fe044c-ba78-11e9-9d23-0242ac11000c",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-09 11:54:04",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-08-09 11:54:04",
+                    "id_fungsi": "0c3f18b4-ba77-11e9-80a7-0242ac11000c",
+                    "id_subfungsi": "501bb276-ba78-11e9-9072-0242ac11000c",
+                    "id_kegiatan": "603f97d0-ba78-11e9-86f7-0242ac11000c",
+                    "kode": "HM0200",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 1,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": true,
+                    "dinilai_kembali": false,
+                    "keterangan": null
+                },
+                {
+                    "id": "c66ce474-ce00-11e9-8fc7-0242ac11000d",
+                    "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "created_by_email": "adirizky54@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-09-02 13:28:11",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-09-02 13:28:11",
+                    "id_fungsi": "0c3f18b4-ba77-11e9-80a7-0242ac11000c",
+                    "id_subfungsi": "501bb276-ba78-11e9-9072-0242ac11000c",
+                    "id_kegiatan": "bb514d10-ce00-11e9-b003-0242ac11000d",
+                    "kode": "HM0201",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 1,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": false,
+                    "dinilai_kembali": true,
+                    "keterangan": null
+                },
+                {
+                    "id": "e797f580-f92d-11e9-a18c-0242ac11000d",
+                    "created_by_id": "265999a4-e1f7-11e9-ac7a-0242ac110016",
+                    "created_by_email": "indonesia8804@gmail.com",
+                    "created_by_nama": null,
+                    "created_date": "2019-10-27 21:27:21",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "id_fungsi": "935aac9a-f92d-11e9-affa-0242ac11000d",
+                    "id_subfungsi": "9d28aa0c-f92d-11e9-b68c-0242ac11000d",
+                    "id_kegiatan": "a386f7c0-f92d-11e9-9c3f-0242ac11000d",
+                    "kode": "KF0000",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 1,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": true,
+                    "dinilai_kembali": false,
+                    "keterangan": null
+                },
+                {
+                    "id": "96570e9c-c3ea-11e9-b00a-0242ac11000e",
+                    "created_by_id": "0d4d99b8-c3cc-11e9-a972-0242ac11000e",
+                    "created_by_email": "ramadhona@qti.co.id",
+                    "created_by_nama": null,
+                    "created_date": "2019-08-20 16:24:34",
+                    "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                    "updated_by_email": "adirizky54@gmail.com",
+                    "updated_date": "2019-08-20 16:24:34",
+                    "id_fungsi": "d0b2126e-c3e9-11e9-8bf1-0242ac11000e",
+                    "id_subfungsi": "f8254270-c3e9-11e9-a112-0242ac11000e",
+                    "id_kegiatan": "07a271d8-c3ea-11e9-ac3c-0242ac11000e",
+                    "kode": "OT0000",
+                    "retensi_aktif_value": 1,
+                    "retensi_aktif_satuan": "tahun",
+                    "retensi_inaktif_value": 1,
+                    "retensi_inaktif_satuan": "tahun",
+                    "musnah": false,
+                    "dinilai_kembali": true,
+                    "keterangan": null
+                }
+            ]
+        }
+
+### Create Klasifikasi Retensi [POST /arsip/klasifikasi-retensi/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "retensi_aktif_satuan": "bulan",
+                "retensi_inaktif_satuan": "bulan",
+                "id_fungsi": "7e71240c-10e6-11ea-a94e-0242ac110007",
+                "id_subfungsi": "92420818-10e6-11ea-98b9-0242ac110007",
+                "id_kegiatan": "9b0a62c6-10e6-11ea-b3a3-0242ac110007",
+                "id_transaksi": "ae4282be-10e6-11ea-886a-0242ac110007",
+                "retensi_aktif_value": "1",
+                "retensi_inaktif_value": "1",
+                "musnah": true,
+                "dinilai_kembali": false
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "retensi untuk klasifikasi HA0000 telah berhasil disimpan",
+            "data": {
+                "id": "b27a299c-10e6-11ea-abb2-0242ac110007",
+                "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "created_by_email": "adirizky54@gmail.com",
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "id_fungsi": "7e71240c-10e6-11ea-a94e-0242ac110007",
+                "id_subfungsi": "92420818-10e6-11ea-98b9-0242ac110007",
+                "id_kegiatan": "9b0a62c6-10e6-11ea-b3a3-0242ac110007",
+                "kode": "HA0000",
+                "retensi_aktif_value": 1,
+                "retensi_aktif_satuan": "bulan",
+                "retensi_inaktif_value": 1,
+                "retensi_inaktif_satuan": "bulan",
+                "musnah": true,
+                "dinilai_kembali": false,
+                "keterangan": null
+            }
+        }
+
+### Update Klasifikasi Retensi [PUT /arsip/klasifikasi-retensi/{id}/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "id_fungsi": "7e71240c-10e6-11ea-a94e-0242ac110007",
+                "id_subfungsi": "92420818-10e6-11ea-98b9-0242ac110007",
+                "id_kegiatan": "9b0a62c6-10e6-11ea-b3a3-0242ac110007",
+                "retensi_aktif_value": 1,
+                "retensi_aktif_satuan": "bulan",
+                "retensi_inaktif_value": 1,
+                "retensi_inaktif_satuan": "bulan",
+                "musnah": true,
+                "dinilai_kembali": false,
+                "keterangan": null,
+                "edit_all": false
+            }
+            
++ Parameters
+
+    + id: `b27a299c-10e6-11ea-abb2-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "retensi untuk klasifikasi HA0000 telah berhasil diubah",
+            "data": {
+                "id": "b27a299c-10e6-11ea-abb2-0242ac110007",
+                "created_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "created_by_email": "adirizky54@gmail.com",
+                "created_by_nama": null,
+                "created_date": "2019-11-27 09:00:35",
+                "updated_by_id": "4c2324c6-9889-11e9-bb6d-0242ac110008",
+                "updated_by_email": "adirizky54@gmail.com",
+                "updated_date": "2019-11-27 09:00:35",
+                "id_fungsi": "7e71240c-10e6-11ea-a94e-0242ac110007",
+                "id_subfungsi": "92420818-10e6-11ea-98b9-0242ac110007",
+                "id_kegiatan": "9b0a62c6-10e6-11ea-b3a3-0242ac110007",
+                "kode": "HA0000",
+                "retensi_aktif_value": 1,
+                "retensi_aktif_satuan": "bulan",
+                "retensi_inaktif_value": 1,
+                "retensi_inaktif_satuan": "bulan",
+                "musnah": true,
+                "dinilai_kembali": false,
+                "keterangan": null
+            }
+        }
+
+### Delete Klasifikasi Retensi [DELETE /arsip/klasifikasi-retensi/{id}/]
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
++ Parameters
+
+    + id: `b27a299c-10e6-11ea-abb2-0242ac110007` (string)
+
++ Response 200 (application/json)
+
+        {
+            "message": "retensi telah berhasil dihapus"
+        }
+
+## Lisensi Collection [/lisensi]
+
+### List Lisensi [GET /lisensi/{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 51,
+            "filtered": 51,
+            "page": 1,
+            "pageCount": 6,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "f7f73700-0226-11ea-aeba-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.1",
+                    "module_name": "Data Entry & Validation",
+                    "module_type": "ARC-03EC",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "8b9180783ac9ae033f9c1556b6de597a",
+                    "status": "Activated",
+                    "qrcode": "/qr/4jn21u1v098kq26j.png"
+                },
+                {
+                    "id": "c14ded8a-022b-11ea-929e-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.10",
+                    "module_name": "Data Statistic",
+                    "module_type": "ARC-09MB",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "24e5ee9aae430e05026b1342b688688f",
+                    "status": "Activated",
+                    "qrcode": "/qr/vme3ywmkj3zmnyuf.png"
+                },
+                {
+                    "id": "c46d8f24-022b-11ea-baec-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.11",
+                    "module_name": "Report Generator",
+                    "module_type": "ARC-08NW",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "20fa668373582af105cad9f811b52d53",
+                    "status": "Activated",
+                    "qrcode": "/qr/4or0kcy8op7esbvf.png"
+                },
+                {
+                    "id": "ca0dbe78-022b-11ea-9258-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.12",
+                    "module_name": "Document Water Marker",
+                    "module_type": "ARC-02DE",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "1651087791894b28a063b472a5179df8",
+                    "status": "Activated",
+                    "qrcode": "/qr/nmz0ig9z1jimacqg.png"
+                },
+                {
+                    "id": "cfdd7eb6-022b-11ea-b246-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.13",
+                    "module_name": "Q & A",
+                    "module_type": "ARC-08XR",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "b8d98a43b4c98bdd9a09119659827674",
+                    "status": "Activated",
+                    "qrcode": "/qr/ayqgrg7ir7ta2x89.png"
+                },
+                {
+                    "id": "d6a1674c-022b-11ea-a89e-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.14",
+                    "module_name": "Manual Guide Module",
+                    "module_type": "ARC-09TJ",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "32e5189f21ea480ea78c74d7c43ac6ca",
+                    "status": "Activated",
+                    "qrcode": "/qr/lel795j97l7us1db.png"
+                },
+                {
+                    "id": "dae5b236-022b-11ea-85ed-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.15",
+                    "module_name": "Standard Operating Procedure",
+                    "module_type": "ARC-01IW",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "cc106c0d0a83b917c8813b804bac80e6",
+                    "status": "Activated",
+                    "qrcode": "/qr/lgvc8b7jj2nm6ee9.png"
+                },
+                {
+                    "id": "e098219e-022b-11ea-8b8a-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.16",
+                    "module_name": "Optical Character Recognition",
+                    "module_type": "ARC-04IU",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "66eed62a95fdff511e1749dd5714e0ad",
+                    "status": "Activated",
+                    "qrcode": "/qr/f4nfl3zczf8xqz94.png"
+                },
+                {
+                    "id": "1929e7a8-0227-11ea-a02e-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.2",
+                    "module_name": "Data Reader",
+                    "module_type": "ARC-04DJ",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "68929a92e664a780ed0d604a0ec0f670",
+                    "status": "Activated",
+                    "qrcode": "/qr/m6i3phzra33y6jkc.png"
+                },
+                {
+                    "id": "1f13de9e-0227-11ea-a58d-0242ac110007",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-08 16:54:56",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": "2019-11-08 16:54:56",
+                    "customer": "Kejaksaan Agung Indonesia",
+                    "product_name": "Arcaiva",
+                    "module_number": "A.1.3",
+                    "module_name": "Multimedia Reader",
+                    "module_type": "ARC-06NK",
+                    "quantity": 1,
+                    "vol": "Server License",
+                    "serial_number": "08fb81c714abe11437a83a094ea80809",
+                    "status": "Activated",
+                    "qrcode": "/qr/496pmmtnu83ffmaz.png"
+                }
+            ]
+        }
+
+## Backup & Restore Collection [/backup]
+
+### List Backup [GET /backup/{?page}{?pageSize}{?search}]
+
++ Parameters
+
+    + page: 1 (number, optional)
+    + pageSize: 10 (number, optional)
+    + search (string, optional)
+    
++ Request
+
+    + Headers
+    
+            Accept: json/application
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "filtered": 1,
+            "page": 1,
+            "pageCount": 1,
+            "pageSize": 10,
+            "results": [
+                {
+                    "id": "c9744118-0bd3-11ea-af46-0242ac110014",
+                    "created_by_id": "None",
+                    "created_by_email": null,
+                    "created_by_nama": null,
+                    "created_date": "2019-11-21 03:24:43",
+                    "updated_by_id": null,
+                    "updated_by_email": null,
+                    "updated_date": null,
+                    "backup_name": "backup nov 21",
+                    "backup_file": "backup_762920z5.zip"
+                }
+            ]
+        }
+
+### Create Backup [POST /backup/]
+    
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+            
+    + Body
+
+            {
+                "backup_name": "backup nov 27"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "message": "Backup telah berhasil dibuat",
+            "data": {
+                "id": "aa8f3c90-10e8-11ea-a50e-0242ac110007",
+                "created_by_id": "None",
+                "created_by_email": null,
+                "created_by_nama": null,
+                "created_date": "2019-11-27 14:36:46",
+                "updated_by_id": null,
+                "updated_by_email": null,
+                "updated_date": null,
+                "backup_name": "backup nov 27",
+                "backup_file": "backup_t8yl21f7.zip"
+            }
+        }
+
+### Download Backup [GET /backup/{id}]
+    
++ Request (application/x-www-form-urlencoded)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjMjMyNGM2LTk4ODktMTFlOS1iYjZkLTAyNDJhYzExMDAwOCIsImVtYWlsIjoiYWRpcml6a3k1NEBnbWFpbC5jb20iLCJ0aW1lIjoiMjAxOS0xMS0xOSAwMTo1NToyNyJ9.1RDWleUZWVLeeZesUfCi5ks10i0o_SW1TdyPgB2oXkE
+
++ Parameters
+
+    + id: `aa8f3c90-10e8-11ea-a50e-0242ac110007` (string)
+
++ Response 200 (application/zip)
